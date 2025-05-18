@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+#new-book-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#new-book-btn:hover {
+    background-color: #2980b9;
+}
+
+#library-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.book-card h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.book-card p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.book-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.book-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.toggle-read-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.read-status {
+    font-weight: bold;
+}
+
+.read-status.read {
+    color: #2ecc71;
+}
+
+.read-status.unread {
+    color: #e74c3c;
+}
+
+/* Dialog styles */
+#book-form-dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#book-form-dialog::backdrop {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#cancel-btn {
+    background-color: #95a5a6;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    #library-container {
+        grid-template-columns: 1fr;
+    }
+}
